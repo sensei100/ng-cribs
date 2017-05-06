@@ -6,11 +6,17 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<body ng-app="ngCribs">
-  <h1>Hello ng-cribs!</h1>
+<body ng-app="ngCribs" ng-controller="cribsController">
+  <div class="well" ng-repeat="crib in cribs">
+    <h3>{{ crib.address }}</h3>
+    <p><strong>Type:</strong>{{ crib.type }}</p>
+    <p><strong>Description:</strong>{{ crib.price | currency }}</p>
+    <p><strong>Price:</strong>{{ crib.description }}</p>
+  </div>
 </body> 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 <script src="app.js"></script>
+<script src="scripts/cribsController.js"></script>
 </html>
