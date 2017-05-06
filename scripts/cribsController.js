@@ -17,6 +17,16 @@ angular
           $scope.newListing = {};
         }
 
+        $scope.editCrib = function(crib) {
+          $scope.editListing = true;
+          $scope.existingListing = crib;
+        }
+
+        $scope.saveCribEdit = function() {
+          $scope.existingListing = {};
+          $scope.editListing = false;
+        }
+
         cribsFactory.getCribs().success(function(data) {
           $scope.cribs = data;
         }).error(function(error) {
