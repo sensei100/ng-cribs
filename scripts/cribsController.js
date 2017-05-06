@@ -27,6 +27,13 @@ angular
           $scope.editListing = false;
         }
 
+        $scope.deleteCrib = function(listing) {
+          var index = $scope.cribs.indexOf(listing);
+          $scope.cribs.splice(index, 1);
+          $scope.existingListing = {}; 
+          $scope.editListing = false;
+        }
+
         cribsFactory.getCribs().success(function(data) {
           $scope.cribs = data;
         }).error(function(error) {
